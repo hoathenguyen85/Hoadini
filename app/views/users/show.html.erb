@@ -1,19 +1,23 @@
+<!-- If the user has no favorite properties saved -->
+<% if @properties.length == 0 %>
 <div class="container">
     <div class="show-margin">
-        <div class="row">
+        <div class="row favorites-div">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-  <!--               <p>
-                    <a class="btn btn-primary btn-md" href="/user_preferences" role="button">Edit Preferences</a>
-                    <a class="btn btn-primary btn-md" href="/properties" role="button">Search Properties</a>
-                </p> -->
+                <h2>You have not saved any favorites properties.</h2>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <a class="btn btn-primary btn-lg" href="/properties" role="button">Search Properties</a>
+                <a class="btn btn-primary btn-lg" href="/user_preferences" role="button">Edit Preferences</a>
             </div>
         </div>
     </div>
 </div>
-
+<!-- If user has favorite properties saved -->
+<% else %>
 <div class="container">
-    <h2>My Favorites</h2>
-    <div class="row">
+    <div class="row favorites-div">
+        <h2>My Favorites</h2>
         <div class="property">
         <% @properties.each do |property| %>
             <div id="prop-block" class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
@@ -29,7 +33,7 @@
         </div>
     </div>
 </div>
-
+<%end%>
 
 <!-- Footer -->
 <footer>
