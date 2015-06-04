@@ -10,7 +10,12 @@ $(document).ready(function(){
       $('#add').toggle(false);
       $('.user-preferences').append(result);
     });
-    });
+  });
+
+  $('.preflist').on('submit', '#new_user_preference', function(){
+    console.log("asdf");
+    $('#add').toggle(true);
+  })
 
 
   //ajax create for displaying submitting criteria
@@ -50,7 +55,7 @@ $(document).ready(function(){
     }).done(function(result){
       $('.user-preferences').append(result);
     });
-    });
+  });
 
   // ajax edit form
 
